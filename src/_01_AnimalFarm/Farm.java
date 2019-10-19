@@ -2,7 +2,7 @@ package _01_AnimalFarm;
 
 import java.util.ArrayList;
 
-public class Farm extends Sheep {
+public class Farm {
 
 	public static void main(String[] args) {
 		Animal cow = new Cow();

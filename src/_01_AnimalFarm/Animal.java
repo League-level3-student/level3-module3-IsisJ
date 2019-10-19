@@ -1,9 +1,13 @@
 package _01_AnimalFarm;
 
-public abstract class Animal {
+public class Animal {
 
-	abstract void makeNoise();
-	abstract void numLegs();
+	void makeNoise(){
+		System.out.println("making an animal noise");
+	}
+	void numLegs(){
+		System.out.println("default implementation of numLegs");
+	}
 	//create a method that is common to all farm animals
 	//create 4 subclasses of animal (cow, pig, sheep)
 	//testing

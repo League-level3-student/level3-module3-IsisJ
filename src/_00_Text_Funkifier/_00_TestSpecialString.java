@@ -34,6 +34,13 @@ public class _00_TestSpecialString {
 		System.out.println(mcs);
 		assertEquals("tHiS Is aLsO A TeSt", mcs.toString());
 	}
+
+	@Test
+	public void testMixedCapsString2() {
+		SpecialString mcs = new MixedCapsString("THIS is also a test");
+		System.out.println(mcs);
+		assertEquals("tHiS Is aLsO A TeSt", mcs.toString());
+	}
 	
 	//4. Create your own class that extends SpecialString.
 	//   Override the funkifyText method to make any kind of 

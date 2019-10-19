@@ -12,7 +12,7 @@ public class MixedCapsString extends SpecialString{
 		char capLetter;
 		for (int i = 0; i < s.length(); i++) {
 			capLetter = s.charAt(i);
-			if(Character.isLowerCase(capLetter) && !(i%2==0)) {
+			if(i%2==1) {
 				capLetter = Character.toUpperCase(capLetter);
 				funkifiedString = funkifiedString + capLetter;
 			}else {
