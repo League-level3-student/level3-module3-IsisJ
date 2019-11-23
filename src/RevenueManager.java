@@ -24,23 +24,31 @@ public class RevenueManager {
 	public String getTopFundraiser() {
 		String topFundraiser = "";
 		int bestFunds=0;
-		int currentFunds = 0;
+
 		for(String name : revenue.keySet()) {
-			currentFunds=0;
-			for(int i=0; i<revenue.get(name).size(); i++) {
-				currentFunds = currentFunds + revenue.get(name).get(i);
-				System.out.println("currentFunds is/from: "+currentFunds+ name);
-			}
+			int currentFunds = personalTotalFunds(revenue.get(name));
+			
 			if(bestFunds<currentFunds) {
 				bestFunds = currentFunds;
-				System.out.println("bestFunds: "+bestFunds);
-			}
-			if(bestFunds>=currentFunds && !(currentFunds ==0)) {
 				topFundraiser = name;
-				System.out.println("top fundraiser: "+ topFundraiser);
-				currentFunds = 0;
+				System.out.println("bestFunds: "+bestFunds);
+				System.out.println("bestFunds name: "+name);
 			}
+			
 		}
 		return topFundraiser;
 	}
+	
+	private int personalTotalFunds( ArrayList <Integer> revenue) {
+		
+		int currentFunds = 0;
+		
+		for(int i=0; i<revenue.size(); i++) {
+			currentFunds = currentFunds + revenue.get(i);
+		}
+		
+		return currentFunds;
+		
+	}
+	
 }

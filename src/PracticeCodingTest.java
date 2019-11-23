@@ -17,13 +17,13 @@ public class PracticeCodingTest {
 	@Before
 	public void setup() {
 		ArrayList<Integer> isisBakeSaleRevenues = bakeSaleRevenues(2, 1, 27); // Isis had three bake sales
-		ArrayList<Integer> esmeBakeSaleRevenues = bakeSaleRevenues(); // Esmé was busy and didn't have any bake sales
+		ArrayList<Integer> esmeBakeSaleRevenues = bakeSaleRevenues(); // Esme was busy and didn't have any bake sales
 		ArrayList<Integer> johnBakeSaleRevenues = bakeSaleRevenues(100); // John had 1 bake sale
 		ArrayList<Integer> davidBakeSaleRevenues = bakeSaleRevenues(25, 19, 2, 2, 2); //David had 5 bake sales
 	
 		revenue.put("Isis", isisBakeSaleRevenues);
 		revenue.put("David", davidBakeSaleRevenues);
-		revenue.put("Esmé", esmeBakeSaleRevenues);
+		revenue.put("Esme", esmeBakeSaleRevenues);
 		revenue.put("John", johnBakeSaleRevenues);
 	}
 	
@@ -40,6 +40,21 @@ public class PracticeCodingTest {
 		// if there's a tie, you can return
 		String topFundraiser = revenueManager.getTopFundraiser();
 		assertEquals("John", topFundraiser);
+	}
+	
+	@Test
+	public void test_topFundraiser2() {
+		ArrayList<Integer> isisBakeSaleRevenues = bakeSaleRevenues(2,1,27); // isis had three bake sales
+		ArrayList<Integer> davidBakeSaleRevenues = bakeSaleRevenues(19); // david had one bake sale
+		HashMap<String, ArrayList<Integer>> revenue = new HashMap<>();
+		revenue.put("Isis", isisBakeSaleRevenues);
+		revenue.put("David", davidBakeSaleRevenues);
+		
+		RevenueManager secondManager = new RevenueManager(revenue);
+		
+		String topFundraiser = secondManager.getTopFundraiser();
+		assertEquals("Isis", topFundraiser);
+
 	}
 	
 	// This builds an ArrayList that holds the ints passed in as parameters
